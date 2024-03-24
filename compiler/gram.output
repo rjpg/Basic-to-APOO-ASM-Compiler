@@ -1,0 +1,2801 @@
+Conflict in state 77 between rule 57 and token AND resolved as reduce.
+Conflict in state 77 between rule 57 and token OR resolved as reduce.
+Conflict in state 78 between rule 63 and token PLUS resolved as reduce.
+Conflict in state 78 between rule 63 and token MINUS resolved as reduce.
+Conflict in state 78 between rule 63 and token MUL resolved as reduce.
+Conflict in state 78 between rule 63 and token DIV resolved as reduce.
+Conflict in state 78 between rule 63 and token MOD resolved as reduce.
+Conflict in state 119 between rule 58 and token AND resolved as reduce.
+Conflict in state 119 between rule 58 and token OR resolved as reduce.
+Conflict in state 120 between rule 59 and token AND resolved as reduce.
+Conflict in state 120 between rule 59 and token OR resolved as reduce.
+Conflict in state 121 between rule 67 and token PLUS resolved as reduce.
+Conflict in state 121 between rule 67 and token MINUS resolved as reduce.
+Conflict in state 121 between rule 67 and token MUL resolved as shift.
+Conflict in state 121 between rule 67 and token DIV resolved as shift.
+Conflict in state 121 between rule 67 and token MOD resolved as shift.
+Conflict in state 122 between rule 66 and token PLUS resolved as reduce.
+Conflict in state 122 between rule 66 and token MINUS resolved as reduce.
+Conflict in state 122 between rule 66 and token MUL resolved as shift.
+Conflict in state 122 between rule 66 and token DIV resolved as shift.
+Conflict in state 122 between rule 66 and token MOD resolved as shift.
+Conflict in state 123 between rule 64 and token PLUS resolved as reduce.
+Conflict in state 123 between rule 64 and token MINUS resolved as reduce.
+Conflict in state 123 between rule 64 and token MUL resolved as reduce.
+Conflict in state 123 between rule 64 and token DIV resolved as reduce.
+Conflict in state 123 between rule 64 and token MOD resolved as reduce.
+Conflict in state 124 between rule 65 and token PLUS resolved as reduce.
+Conflict in state 124 between rule 65 and token MINUS resolved as reduce.
+Conflict in state 124 between rule 65 and token MUL resolved as reduce.
+Conflict in state 124 between rule 65 and token DIV resolved as reduce.
+Conflict in state 124 between rule 65 and token MOD resolved as reduce.
+Conflict in state 125 between rule 68 and token PLUS resolved as reduce.
+Conflict in state 125 between rule 68 and token MINUS resolved as reduce.
+Conflict in state 125 between rule 68 and token MUL resolved as reduce.
+Conflict in state 125 between rule 68 and token DIV resolved as reduce.
+Conflict in state 125 between rule 68 and token MOD resolved as reduce.
+Conflict in state 142 between rule 77 and token PLUS resolved as reduce.
+Conflict in state 142 between rule 77 and token MINUS resolved as reduce.
+Conflict in state 142 between rule 77 and token MUL resolved as shift.
+Conflict in state 142 between rule 77 and token DIV resolved as shift.
+Conflict in state 142 between rule 77 and token MOD resolved as shift.
+Conflict in state 156 between rule 82 and token PLUS resolved as reduce.
+Conflict in state 156 between rule 82 and token MINUS resolved as reduce.
+Conflict in state 156 between rule 82 and token MUL resolved as shift.
+Conflict in state 156 between rule 82 and token DIV resolved as shift.
+Conflict in state 156 between rule 82 and token MOD resolved as shift.
+Conflict in state 157 between rule 81 and token PLUS resolved as reduce.
+Conflict in state 157 between rule 81 and token MINUS resolved as reduce.
+Conflict in state 157 between rule 81 and token MUL resolved as shift.
+Conflict in state 157 between rule 81 and token DIV resolved as shift.
+Conflict in state 157 between rule 81 and token MOD resolved as shift.
+Conflict in state 158 between rule 78 and token PLUS resolved as reduce.
+Conflict in state 158 between rule 78 and token MINUS resolved as reduce.
+Conflict in state 158 between rule 78 and token MUL resolved as reduce.
+Conflict in state 158 between rule 78 and token DIV resolved as reduce.
+Conflict in state 158 between rule 78 and token MOD resolved as reduce.
+Conflict in state 159 between rule 79 and token PLUS resolved as reduce.
+Conflict in state 159 between rule 79 and token MINUS resolved as reduce.
+Conflict in state 159 between rule 79 and token MUL resolved as reduce.
+Conflict in state 159 between rule 79 and token DIV resolved as reduce.
+Conflict in state 159 between rule 79 and token MOD resolved as reduce.
+Conflict in state 160 between rule 80 and token PLUS resolved as reduce.
+Conflict in state 160 between rule 80 and token MINUS resolved as reduce.
+Conflict in state 160 between rule 80 and token MUL resolved as reduce.
+Conflict in state 160 between rule 80 and token DIV resolved as reduce.
+Conflict in state 160 between rule 80 and token MOD resolved as reduce.
+
+
+Useless nonterminals:
+
+   tCOMMA_e_expression_mais
+   expression_list_01
+
+
+Terminals which are not used:
+
+   COMMENT
+   STRING
+   INTEGER
+   TYPE
+   AS
+   STATIC
+   SHARED
+   BYVAL
+   BYREF
+   ELSEIF
+   SELECT
+   ENDSELECT
+   CASE
+   CASEELSE
+   IS
+   DECLARE
+   CALL
+   FUNCTION
+   ENDFUNCTION
+   EXITFUNCTION
+   SUB
+   ENDSUB
+   EXITSUB
+   UBOUND
+
+
+Useless rules:
+
+#73    tCOMMA_e_expression_mais: COMMA expression;
+#74    tCOMMA_e_expression_mais: COMMA expression tCOMMA_e_expression_mais;
+#75    expression_list_01:;
+#76    expression_list_01: expression_list;
+
+
+Grammar
+
+  Number, Line, Rule
+    1 206 nl -> NL
+    2 208 start -> program
+    3 211 program -> /* empty */
+    4 212 program -> variable_decl program
+    5 213 program -> command program
+    6 214 program -> constant_decl program
+    7 215 program -> nl program
+    8 218 variable_decl -> DIM declared_variable_list nl
+    9 221 declared_variable_list -> declared_variable tCOMMA_e_declared_variable_ast
+   10 225 tCOMMA_e_declared_variable_ast -> /* empty */
+   11 226 tCOMMA_e_declared_variable_ast -> COMMA declared_variable tCOMMA_e_declared_variable_ast
+   12 230 declared_variable -> var_identifier tOSQR_e_expression_list_e_tCSQR_01
+   13 245 tOSQR_e_expression_list_e_tCSQR_01 -> /* empty */
+   14 246 tOSQR_e_expression_list_e_tCSQR_01 -> OSQR expression_list CSQR
+   15 249 constant_decl -> CONST const_identifier EQ constant_expression nl
+   16 260 command -> if_command
+   17 261 command -> for_command
+   18 262 command -> do_while_command
+   19 263 command -> loop_until_command
+   20 264 command -> assignment_command
+   21 265 command -> end_command
+   22 266 command -> exit_loop_command
+   23 267 command -> input_command
+   24 268 command -> print_command
+   25 271 if_command -> IF condition THEN nl variable_decl_ou_constant_decl_ou_command_ast else_nl_01 ENDIF nl
+   26 274 else_nl_01 -> ELSE nl variable_decl_ou_constant_decl_ou_command_ast
+   27 275 else_nl_01 -> /* empty */
+   28 278 for_command -> FOR using_simple_variable EQ expression TO expression tSTEP_e_expression_01 nl variable_decl_ou_constant_decl_ou_command_ast NEXT nl
+   29 292 tSTEP_e_expression_01 -> /* empty */
+   30 293 tSTEP_e_expression_01 -> STEP expression
+   31 297 do_while_command -> DO WHILE condition nl variable_decl_ou_constant_decl_ou_command_ast LOOP nl
+   32 302 loop_until_command -> DO nl variable_decl_ou_constant_decl_ou_command_ast LOOP UNTIL condition nl
+   33 305 variable_decl_ou_constant_decl_ou_command_ast -> /* empty */
+   34 306 variable_decl_ou_constant_decl_ou_command_ast -> variable_decl variable_decl_ou_constant_decl_ou_command_ast
+   35 307 variable_decl_ou_constant_decl_ou_command_ast -> constant_decl variable_decl_ou_constant_decl_ou_command_ast
+   36 308 variable_decl_ou_constant_decl_ou_command_ast -> command variable_decl_ou_constant_decl_ou_command_ast
+   37 314 assignment_command -> using_variable EQ expression nl
+   38 315 assignment_command -> LET using_variable EQ expression nl
+   39 318 end_command -> END nl
+   40 321 exit_loop_command -> EXITLOOP nl
+   41 324 input_command -> INPUT using_variable nl
+   42 327 using_variable -> using_simple_variable
+   43 328 using_variable -> using_array_variable
+   44 331 using_array_variable -> var_identifier OSQR expression_list CSQR
+   45 334 using_simple_variable -> var_identifier
+   46 337 print_command -> PRINT print_expression_list nl
+   47 340 print_expression_list -> print_expression tCOMMA_print_expression_ast
+   48 343 tCOMMA_print_expression_ast -> /* empty */
+   49 344 tCOMMA_print_expression_ast -> COMMA print_expression tCOMMA_print_expression_ast
+   50 347 print_expression -> expression
+   51 348 print_expression -> STRING_LITERAL
+   52 352 condition -> boolean_expression
+   53 355 expression_list -> expression tCOMMA_e_expression_ast
+   54 359 tCOMMA_e_expression_ast -> /* empty */
+   55 360 tCOMMA_e_expression_ast -> COMMA expression tCOMMA_e_expression_ast
+   56 363 expression -> arithmetic_expression
+   57 366 boolean_expression -> NOT boolean_expression
+   58 367 boolean_expression -> boolean_expression AND boolean_expression
+   59 368 boolean_expression -> boolean_expression OR boolean_expression
+   60 369 boolean_expression -> relational_expression
+   61 370 boolean_expression -> OPAR boolean_expression CPAR
+   62 373 relational_expression -> arithmetic_expression relational_op arithmetic_expression
+   63 376 arithmetic_expression -> MINUS arithmetic_expression
+   64 377 arithmetic_expression -> arithmetic_expression MUL arithmetic_expression
+   65 378 arithmetic_expression -> arithmetic_expression DIV arithmetic_expression
+   66 379 arithmetic_expression -> arithmetic_expression MINUS arithmetic_expression
+   67 380 arithmetic_expression -> arithmetic_expression PLUS arithmetic_expression
+   68 381 arithmetic_expression -> arithmetic_expression MOD arithmetic_expression
+   69 382 arithmetic_expression -> OPAR arithmetic_expression CPAR
+   70 383 arithmetic_expression -> NUMBER_LITERAL
+   71 384 arithmetic_expression -> var_or_const_identifier
+   72 385 arithmetic_expression -> using_array_variable
+   77 398 constant_expression -> MINUS constant_expression
+   78 399 constant_expression -> constant_expression MUL constant_expression
+   79 400 constant_expression -> constant_expression DIV constant_expression
+   80 401 constant_expression -> constant_expression MOD constant_expression
+   81 402 constant_expression -> constant_expression MINUS constant_expression
+   82 403 constant_expression -> constant_expression PLUS constant_expression
+   83 404 constant_expression -> OPAR constant_expression CPAR
+   84 405 constant_expression -> NUMBER_LITERAL
+   85 406 constant_expression -> const_identifier
+   86 409 relational_op -> EQ
+   87 410 relational_op -> NE
+   88 411 relational_op -> LT
+   89 412 relational_op -> GT
+   90 413 relational_op -> LE
+   91 414 relational_op -> GE
+   92 417 const_identifier -> IDENTIFIER
+   93 420 var_identifier -> IDENTIFIER
+   94 423 var_or_const_identifier -> IDENTIFIER
+
+
+Terminals, with rules where they appear
+
+$ (-1)
+error (256)
+NL (257) 1
+COMMENT (258)
+OPAR (259) 61 69 83
+CPAR (260) 61 69 83
+OSQR (261) 14 44
+CSQR (262) 14 44
+COMMA (263) 11 49 55 73 74
+EQ (264) 15 28 37 38 86
+NE (265) 87
+LT (266) 88
+GT (267) 89
+LE (268) 90
+GE (269) 91
+NOT (270) 57
+AND (271) 58
+OR (272) 59
+PLUS (273) 67 82
+MINUS (274) 63 66 77 81
+MUL (275) 64 78
+DIV (276) 65 79
+MOD (277) 68 80
+STRING_LITERAL (278) 51
+NUMBER_LITERAL (279) 70 84
+STRING (280)
+INTEGER (281)
+TYPE (282)
+AS (283)
+LET (284) 38
+DIM (285) 8
+STATIC (286)
+SHARED (287)
+CONST (288) 15
+BYVAL (289)
+BYREF (290)
+IF (291) 25
+ENDIF (292) 25
+ELSEIF (293)
+ELSE (294) 26
+THEN (295) 25
+SELECT (296)
+ENDSELECT (297)
+CASE (298)
+CASEELSE (299)
+IS (300)
+FOR (301) 28
+TO (302) 28
+STEP (303) 30
+NEXT (304) 28
+DO (305) 31 32
+WHILE (306) 31
+LOOP (307) 31 32
+UNTIL (308) 32
+EXITLOOP (309) 40
+DECLARE (310)
+END (311) 39
+CALL (312)
+FUNCTION (313)
+ENDFUNCTION (314)
+EXITFUNCTION (315)
+SUB (316)
+ENDSUB (317)
+EXITSUB (318)
+PRINT (319) 46
+INPUT (320) 41
+IDENTIFIER (321) 92 93 94
+UBOUND (322)
+NEG (323)
+
+
+Nonterminals, with rules where they appear
+
+nl (70)
+    on left: 1, on right: 7 8 15 25 26 28 31 32 37 38 39 40 41 46
+start (71)
+    on left: 2
+program (72)
+    on left: 3 4 5 6 7, on right: 2 4 5 6 7
+variable_decl (73)
+    on left: 8, on right: 4 34
+declared_variable_list (74)
+    on left: 9, on right: 8
+tCOMMA_e_declared_variable_ast (75)
+    on left: 10 11, on right: 9 11
+declared_variable (76)
+    on left: 12, on right: 9 11
+tOSQR_e_expression_list_e_tCSQR_01 (77)
+    on left: 13 14, on right: 12
+constant_decl (78)
+    on left: 15, on right: 6 35
+command (79)
+    on left: 16 17 18 19 20 21 22 23 24, on right: 5 36
+if_command (80)
+    on left: 25, on right: 16
+else_nl_01 (81)
+    on left: 26 27, on right: 25
+for_command (82)
+    on left: 28, on right: 17
+tSTEP_e_expression_01 (83)
+    on left: 29 30, on right: 28
+do_while_command (84)
+    on left: 31, on right: 18
+loop_until_command (85)
+    on left: 32, on right: 19
+variable_decl_ou_constant_decl_ou_command_ast (86)
+    on left: 33 34 35 36, on right: 25 26 28 31 32 34 35 36
+assignment_command (87)
+    on left: 37 38, on right: 20
+end_command (88)
+    on left: 39, on right: 21
+exit_loop_command (89)
+    on left: 40, on right: 22
+input_command (90)
+    on left: 41, on right: 23
+using_variable (91)
+    on left: 42 43, on right: 37 38 41
+using_array_variable (92)
+    on left: 44, on right: 43 72
+using_simple_variable (93)
+    on left: 45, on right: 28 42
+print_command (94)
+    on left: 46, on right: 24
+print_expression_list (95)
+    on left: 47, on right: 46
+tCOMMA_print_expression_ast (96)
+    on left: 48 49, on right: 47 49
+print_expression (97)
+    on left: 50 51, on right: 47 49
+condition (98)
+    on left: 52, on right: 25 31 32
+expression_list (99)
+    on left: 53, on right: 14 44 76
+tCOMMA_e_expression_ast (100)
+    on left: 54 55, on right: 53 55
+expression (101)
+    on left: 56, on right: 28 30 37 38 50 53 55 73 74
+boolean_expression (102)
+    on left: 57 58 59 60 61, on right: 52 57 58 59 61
+relational_expression (103)
+    on left: 62, on right: 60
+arithmetic_expression (104)
+    on left: 63 64 65 66 67 68 69 70 71 72, on right: 56 62 63 64 65
+    66 67 68 69
+constant_expression (105)
+    on left: 77 78 79 80 81 82 83 84 85, on right: 15 77 78 79 80 81
+    82 83
+relational_op (106)
+    on left: 86 87 88 89 90 91, on right: 62
+const_identifier (107)
+    on left: 92, on right: 15 85
+var_identifier (108)
+    on left: 93, on right: 12 44 45
+var_or_const_identifier (109)
+    on left: 94, on right: 71
+
+
+state 0
+
+    NL  	shift, and go to state 1
+    LET 	shift, and go to state 2
+    DIM 	shift, and go to state 3
+    CONST	shift, and go to state 4
+    IF  	shift, and go to state 5
+    FOR 	shift, and go to state 6
+    DO  	shift, and go to state 7
+    EXITLOOP	shift, and go to state 8
+    END 	shift, and go to state 9
+    PRINT	shift, and go to state 10
+    INPUT	shift, and go to state 11
+    IDENTIFIER	shift, and go to state 12
+
+    $default	reduce using rule 3 (program)
+
+    nl  	go to state 13
+    start	go to state 180
+    program	go to state 14
+    variable_decl	go to state 15
+    constant_decl	go to state 16
+    command	go to state 17
+    if_command	go to state 18
+    for_command	go to state 19
+    do_while_command	go to state 20
+    loop_until_command	go to state 21
+    assignment_command	go to state 22
+    end_command	go to state 23
+    exit_loop_command	go to state 24
+    input_command	go to state 25
+    using_variable	go to state 26
+    using_array_variable	go to state 27
+    using_simple_variable	go to state 28
+    print_command	go to state 29
+    var_identifier	go to state 30
+
+
+
+state 1
+
+    nl  ->  NL .   (rule 1)
+
+    $default	reduce using rule 1 (nl)
+
+
+
+state 2
+
+    assignment_command  ->  LET . using_variable EQ expression nl   (rule 38)
+
+    IDENTIFIER	shift, and go to state 12
+
+    using_variable	go to state 31
+    using_array_variable	go to state 27
+    using_simple_variable	go to state 28
+    var_identifier	go to state 30
+
+
+
+state 3
+
+    variable_decl  ->  DIM . declared_variable_list nl   (rule 8)
+
+    IDENTIFIER	shift, and go to state 12
+
+    declared_variable_list	go to state 32
+    declared_variable	go to state 33
+    var_identifier	go to state 34
+
+
+
+state 4
+
+    constant_decl  ->  CONST . const_identifier EQ constant_expression nl   (rule 15)
+
+    IDENTIFIER	shift, and go to state 35
+
+    const_identifier	go to state 36
+
+
+
+state 5
+
+    if_command  ->  IF . condition THEN nl variable_decl_ou_constant_decl_ou_command_ast else_nl_01 ENDIF nl   (rule 25)
+
+    OPAR	shift, and go to state 37
+    NOT 	shift, and go to state 38
+    MINUS	shift, and go to state 39
+    NUMBER_LITERAL	shift, and go to state 40
+    IDENTIFIER	shift, and go to state 41
+
+    using_array_variable	go to state 42
+    condition	go to state 43
+    boolean_expression	go to state 44
+    relational_expression	go to state 45
+    arithmetic_expression	go to state 46
+    var_identifier	go to state 47
+    var_or_const_identifier	go to state 48
+
+
+
+state 6
+
+    for_command  ->  FOR . using_simple_variable EQ expression TO expression tSTEP_e_expression_01 nl variable_decl_ou_constant_decl_ou_command_ast NEXT nl   (rule 28)
+
+    IDENTIFIER	shift, and go to state 12
+
+    using_simple_variable	go to state 49
+    var_identifier	go to state 50
+
+
+
+state 7
+
+    do_while_command  ->  DO . WHILE condition nl variable_decl_ou_constant_decl_ou_command_ast LOOP nl   (rule 31)
+    loop_until_command  ->  DO . nl variable_decl_ou_constant_decl_ou_command_ast LOOP UNTIL condition nl   (rule 32)
+
+    NL  	shift, and go to state 1
+    WHILE	shift, and go to state 51
+
+    nl  	go to state 52
+
+
+
+state 8
+
+    exit_loop_command  ->  EXITLOOP . nl   (rule 40)
+
+    NL  	shift, and go to state 1
+
+    nl  	go to state 53
+
+
+
+state 9
+
+    end_command  ->  END . nl   (rule 39)
+
+    NL  	shift, and go to state 1
+
+    nl  	go to state 54
+
+
+
+state 10
+
+    print_command  ->  PRINT . print_expression_list nl   (rule 46)
+
+    OPAR	shift, and go to state 55
+    MINUS	shift, and go to state 39
+    STRING_LITERAL	shift, and go to state 56
+    NUMBER_LITERAL	shift, and go to state 40
+    IDENTIFIER	shift, and go to state 41
+
+    using_array_variable	go to state 42
+    print_expression_list	go to state 57
+    print_expression	go to state 58
+    expression	go to state 59
+    arithmetic_expression	go to state 60
+    var_identifier	go to state 47
+    var_or_const_identifier	go to state 48
+
+
+
+state 11
+
+    input_command  ->  INPUT . using_variable nl   (rule 41)
+
+    IDENTIFIER	shift, and go to state 12
+
+    using_variable	go to state 61
+    using_array_variable	go to state 27
+    using_simple_variable	go to state 28
+    var_identifier	go to state 30
+
+
+
+state 12
+
+    var_identifier  ->  IDENTIFIER .   (rule 93)
+
+    $default	reduce using rule 93 (var_identifier)
+
+
+
+state 13
+
+    program  ->  nl . program   (rule 7)
+
+    NL  	shift, and go to state 1
+    LET 	shift, and go to state 2
+    DIM 	shift, and go to state 3
+    CONST	shift, and go to state 4
+    IF  	shift, and go to state 5
+    FOR 	shift, and go to state 6
+    DO  	shift, and go to state 7
+    EXITLOOP	shift, and go to state 8
+    END 	shift, and go to state 9
+    PRINT	shift, and go to state 10
+    INPUT	shift, and go to state 11
+    IDENTIFIER	shift, and go to state 12
+
+    $default	reduce using rule 3 (program)
+
+    nl  	go to state 13
+    program	go to state 62
+    variable_decl	go to state 15
+    constant_decl	go to state 16
+    command	go to state 17
+    if_command	go to state 18
+    for_command	go to state 19
+    do_while_command	go to state 20
+    loop_until_command	go to state 21
+    assignment_command	go to state 22
+    end_command	go to state 23
+    exit_loop_command	go to state 24
+    input_command	go to state 25
+    using_variable	go to state 26
+    using_array_variable	go to state 27
+    using_simple_variable	go to state 28
+    print_command	go to state 29
+    var_identifier	go to state 30
+
+
+
+state 14
+
+    start  ->  program .   (rule 2)
+
+    $default	reduce using rule 2 (start)
+
+
+
+state 15
+
+    program  ->  variable_decl . program   (rule 4)
+
+    NL  	shift, and go to state 1
+    LET 	shift, and go to state 2
+    DIM 	shift, and go to state 3
+    CONST	shift, and go to state 4
+    IF  	shift, and go to state 5
+    FOR 	shift, and go to state 6
+    DO  	shift, and go to state 7
+    EXITLOOP	shift, and go to state 8
+    END 	shift, and go to state 9
+    PRINT	shift, and go to state 10
+    INPUT	shift, and go to state 11
+    IDENTIFIER	shift, and go to state 12
+
+    $default	reduce using rule 3 (program)
+
+    nl  	go to state 13
+    program	go to state 63
+    variable_decl	go to state 15
+    constant_decl	go to state 16
+    command	go to state 17
+    if_command	go to state 18
+    for_command	go to state 19
+    do_while_command	go to state 20
+    loop_until_command	go to state 21
+    assignment_command	go to state 22
+    end_command	go to state 23
+    exit_loop_command	go to state 24
+    input_command	go to state 25
+    using_variable	go to state 26
+    using_array_variable	go to state 27
+    using_simple_variable	go to state 28
+    print_command	go to state 29
+    var_identifier	go to state 30
+
+
+
+state 16
+
+    program  ->  constant_decl . program   (rule 6)
+
+    NL  	shift, and go to state 1
+    LET 	shift, and go to state 2
+    DIM 	shift, and go to state 3
+    CONST	shift, and go to state 4
+    IF  	shift, and go to state 5
+    FOR 	shift, and go to state 6
+    DO  	shift, and go to state 7
+    EXITLOOP	shift, and go to state 8
+    END 	shift, and go to state 9
+    PRINT	shift, and go to state 10
+    INPUT	shift, and go to state 11
+    IDENTIFIER	shift, and go to state 12
+
+    $default	reduce using rule 3 (program)
+
+    nl  	go to state 13
+    program	go to state 64
+    variable_decl	go to state 15
+    constant_decl	go to state 16
+    command	go to state 17
+    if_command	go to state 18
+    for_command	go to state 19
+    do_while_command	go to state 20
+    loop_until_command	go to state 21
+    assignment_command	go to state 22
+    end_command	go to state 23
+    exit_loop_command	go to state 24
+    input_command	go to state 25
+    using_variable	go to state 26
+    using_array_variable	go to state 27
+    using_simple_variable	go to state 28
+    print_command	go to state 29
+    var_identifier	go to state 30
+
+
+
+state 17
+
+    program  ->  command . program   (rule 5)
+
+    NL  	shift, and go to state 1
+    LET 	shift, and go to state 2
+    DIM 	shift, and go to state 3
+    CONST	shift, and go to state 4
+    IF  	shift, and go to state 5
+    FOR 	shift, and go to state 6
+    DO  	shift, and go to state 7
+    EXITLOOP	shift, and go to state 8
+    END 	shift, and go to state 9
+    PRINT	shift, and go to state 10
+    INPUT	shift, and go to state 11
+    IDENTIFIER	shift, and go to state 12
+
+    $default	reduce using rule 3 (program)
+
+    nl  	go to state 13
+    program	go to state 65
+    variable_decl	go to state 15
+    constant_decl	go to state 16
+    command	go to state 17
+    if_command	go to state 18
+    for_command	go to state 19
+    do_while_command	go to state 20
+    loop_until_command	go to state 21
+    assignment_command	go to state 22
+    end_command	go to state 23
+    exit_loop_command	go to state 24
+    input_command	go to state 25
+    using_variable	go to state 26
+    using_array_variable	go to state 27
+    using_simple_variable	go to state 28
+    print_command	go to state 29
+    var_identifier	go to state 30
+
+
+
+state 18
+
+    command  ->  if_command .   (rule 16)
+
+    $default	reduce using rule 16 (command)
+
+
+
+state 19
+
+    command  ->  for_command .   (rule 17)
+
+    $default	reduce using rule 17 (command)
+
+
+
+state 20
+
+    command  ->  do_while_command .   (rule 18)
+
+    $default	reduce using rule 18 (command)
+
+
+
+state 21
+
+    command  ->  loop_until_command .   (rule 19)
+
+    $default	reduce using rule 19 (command)
+
+
+
+state 22
+
+    command  ->  assignment_command .   (rule 20)
+
+    $default	reduce using rule 20 (command)
+
+
+
+state 23
+
+    command  ->  end_command .   (rule 21)
+
+    $default	reduce using rule 21 (command)
+
+
+
+state 24
+
+    command  ->  exit_loop_command .   (rule 22)
+
+    $default	reduce using rule 22 (command)
+
+
+
+state 25
+
+    command  ->  input_command .   (rule 23)
+
+    $default	reduce using rule 23 (command)
+
+
+
+state 26
+
+    assignment_command  ->  using_variable . EQ expression nl   (rule 37)
+
+    EQ  	shift, and go to state 66
+
+
+
+state 27
+
+    using_variable  ->  using_array_variable .   (rule 43)
+
+    $default	reduce using rule 43 (using_variable)
+
+
+
+state 28
+
+    using_variable  ->  using_simple_variable .   (rule 42)
+
+    $default	reduce using rule 42 (using_variable)
+
+
+
+state 29
+
+    command  ->  print_command .   (rule 24)
+
+    $default	reduce using rule 24 (command)
+
+
+
+state 30
+
+    using_array_variable  ->  var_identifier . OSQR expression_list CSQR   (rule 44)
+    using_simple_variable  ->  var_identifier .   (rule 45)
+
+    OSQR	shift, and go to state 67
+
+    $default	reduce using rule 45 (using_simple_variable)
+
+
+
+state 31
+
+    assignment_command  ->  LET using_variable . EQ expression nl   (rule 38)
+
+    EQ  	shift, and go to state 68
+
+
+
+state 32
+
+    variable_decl  ->  DIM declared_variable_list . nl   (rule 8)
+
+    NL  	shift, and go to state 1
+
+    nl  	go to state 69
+
+
+
+state 33
+
+    declared_variable_list  ->  declared_variable . tCOMMA_e_declared_variable_ast   (rule 9)
+
+    COMMA	shift, and go to state 70
+
+    $default	reduce using rule 10 (tCOMMA_e_declared_variable_ast)
+
+    tCOMMA_e_declared_variable_ast	go to state 71
+
+
+
+state 34
+
+    declared_variable  ->  var_identifier . tOSQR_e_expression_list_e_tCSQR_01   (rule 12)
+
+    OSQR	shift, and go to state 72
+
+    $default	reduce using rule 13 (tOSQR_e_expression_list_e_tCSQR_01)
+
+    tOSQR_e_expression_list_e_tCSQR_01	go to state 73
+
+
+
+state 35
+
+    const_identifier  ->  IDENTIFIER .   (rule 92)
+
+    $default	reduce using rule 92 (const_identifier)
+
+
+
+state 36
+
+    constant_decl  ->  CONST const_identifier . EQ constant_expression nl   (rule 15)
+
+    EQ  	shift, and go to state 74
+
+
+
+state 37
+
+    boolean_expression  ->  OPAR . boolean_expression CPAR   (rule 61)
+    arithmetic_expression  ->  OPAR . arithmetic_expression CPAR   (rule 69)
+
+    OPAR	shift, and go to state 37
+    NOT 	shift, and go to state 38
+    MINUS	shift, and go to state 39
+    NUMBER_LITERAL	shift, and go to state 40
+    IDENTIFIER	shift, and go to state 41
+
+    using_array_variable	go to state 42
+    boolean_expression	go to state 75
+    relational_expression	go to state 45
+    arithmetic_expression	go to state 76
+    var_identifier	go to state 47
+    var_or_const_identifier	go to state 48
+
+
+
+state 38
+
+    boolean_expression  ->  NOT . boolean_expression   (rule 57)
+
+    OPAR	shift, and go to state 37
+    NOT 	shift, and go to state 38
+    MINUS	shift, and go to state 39
+    NUMBER_LITERAL	shift, and go to state 40
+    IDENTIFIER	shift, and go to state 41
+
+    using_array_variable	go to state 42
+    boolean_expression	go to state 77
+    relational_expression	go to state 45
+    arithmetic_expression	go to state 46
+    var_identifier	go to state 47
+    var_or_const_identifier	go to state 48
+
+
+
+state 39
+
+    arithmetic_expression  ->  MINUS . arithmetic_expression   (rule 63)
+
+    OPAR	shift, and go to state 55
+    MINUS	shift, and go to state 39
+    NUMBER_LITERAL	shift, and go to state 40
+    IDENTIFIER	shift, and go to state 41
+
+    using_array_variable	go to state 42
+    arithmetic_expression	go to state 78
+    var_identifier	go to state 47
+    var_or_const_identifier	go to state 48
+
+
+
+state 40
+
+    arithmetic_expression  ->  NUMBER_LITERAL .   (rule 70)
+
+    $default	reduce using rule 70 (arithmetic_expression)
+
+
+
+state 41
+
+    var_identifier  ->  IDENTIFIER .   (rule 93)
+    var_or_const_identifier  ->  IDENTIFIER .   (rule 94)
+
+    OSQR	reduce using rule 93 (var_identifier)
+    $default	reduce using rule 94 (var_or_const_identifier)
+
+
+state 42
+
+    arithmetic_expression  ->  using_array_variable .   (rule 72)
+
+    $default	reduce using rule 72 (arithmetic_expression)
+
+
+
+state 43
+
+    if_command  ->  IF condition . THEN nl variable_decl_ou_constant_decl_ou_command_ast else_nl_01 ENDIF nl   (rule 25)
+
+    THEN	shift, and go to state 79
+
+
+
+state 44
+
+    condition  ->  boolean_expression .   (rule 52)
+    boolean_expression  ->  boolean_expression . AND boolean_expression   (rule 58)
+    boolean_expression  ->  boolean_expression . OR boolean_expression   (rule 59)
+
+    AND 	shift, and go to state 80
+    OR  	shift, and go to state 81
+
+    $default	reduce using rule 52 (condition)
+
+
+
+state 45
+
+    boolean_expression  ->  relational_expression .   (rule 60)
+
+    $default	reduce using rule 60 (boolean_expression)
+
+
+
+state 46
+
+    relational_expression  ->  arithmetic_expression . relational_op arithmetic_expression   (rule 62)
+    arithmetic_expression  ->  arithmetic_expression . MUL arithmetic_expression   (rule 64)
+    arithmetic_expression  ->  arithmetic_expression . DIV arithmetic_expression   (rule 65)
+    arithmetic_expression  ->  arithmetic_expression . MINUS arithmetic_expression   (rule 66)
+    arithmetic_expression  ->  arithmetic_expression . PLUS arithmetic_expression   (rule 67)
+    arithmetic_expression  ->  arithmetic_expression . MOD arithmetic_expression   (rule 68)
+
+    EQ  	shift, and go to state 82
+    NE  	shift, and go to state 83
+    LT  	shift, and go to state 84
+    GT  	shift, and go to state 85
+    LE  	shift, and go to state 86
+    GE  	shift, and go to state 87
+    PLUS	shift, and go to state 88
+    MINUS	shift, and go to state 89
+    MUL 	shift, and go to state 90
+    DIV 	shift, and go to state 91
+    MOD 	shift, and go to state 92
+
+    relational_op	go to state 93
+
+
+
+state 47
+
+    using_array_variable  ->  var_identifier . OSQR expression_list CSQR   (rule 44)
+
+    OSQR	shift, and go to state 67
+
+
+
+state 48
+
+    arithmetic_expression  ->  var_or_const_identifier .   (rule 71)
+
+    $default	reduce using rule 71 (arithmetic_expression)
+
+
+
+state 49
+
+    for_command  ->  FOR using_simple_variable . EQ expression TO expression tSTEP_e_expression_01 nl variable_decl_ou_constant_decl_ou_command_ast NEXT nl   (rule 28)
+
+    EQ  	shift, and go to state 94
+
+
+
+state 50
+
+    using_simple_variable  ->  var_identifier .   (rule 45)
+
+    $default	reduce using rule 45 (using_simple_variable)
+
+
+
+state 51
+
+    do_while_command  ->  DO WHILE . condition nl variable_decl_ou_constant_decl_ou_command_ast LOOP nl   (rule 31)
+
+    OPAR	shift, and go to state 37
+    NOT 	shift, and go to state 38
+    MINUS	shift, and go to state 39
+    NUMBER_LITERAL	shift, and go to state 40
+    IDENTIFIER	shift, and go to state 41
+
+    using_array_variable	go to state 42
+    condition	go to state 95
+    boolean_expression	go to state 44
+    relational_expression	go to state 45
+    arithmetic_expression	go to state 46
+    var_identifier	go to state 47
+    var_or_const_identifier	go to state 48
+
+
+
+state 52
+
+    loop_until_command  ->  DO nl . variable_decl_ou_constant_decl_ou_command_ast LOOP UNTIL condition nl   (rule 32)
+
+    LET 	shift, and go to state 2
+    DIM 	shift, and go to state 3
+    CONST	shift, and go to state 4
+    IF  	shift, and go to state 5
+    FOR 	shift, and go to state 6
+    DO  	shift, and go to state 7
+    EXITLOOP	shift, and go to state 8
+    END 	shift, and go to state 9
+    PRINT	shift, and go to state 10
+    INPUT	shift, and go to state 11
+    IDENTIFIER	shift, and go to state 12
+
+    $default	reduce using rule 33 (variable_decl_ou_constant_decl_ou_command_ast)
+
+    variable_decl	go to state 96
+    constant_decl	go to state 97
+    command	go to state 98
+    if_command	go to state 18
+    for_command	go to state 19
+    do_while_command	go to state 20
+    loop_until_command	go to state 21
+    variable_decl_ou_constant_decl_ou_command_ast	go to state 99
+    assignment_command	go to state 22
+    end_command	go to state 23
+    exit_loop_command	go to state 24
+    input_command	go to state 25
+    using_variable	go to state 26
+    using_array_variable	go to state 27
+    using_simple_variable	go to state 28
+    print_command	go to state 29
+    var_identifier	go to state 30
+
+
+
+state 53
+
+    exit_loop_command  ->  EXITLOOP nl .   (rule 40)
+
+    $default	reduce using rule 40 (exit_loop_command)
+
+
+
+state 54
+
+    end_command  ->  END nl .   (rule 39)
+
+    $default	reduce using rule 39 (end_command)
+
+
+
+state 55
+
+    arithmetic_expression  ->  OPAR . arithmetic_expression CPAR   (rule 69)
+
+    OPAR	shift, and go to state 55
+    MINUS	shift, and go to state 39
+    NUMBER_LITERAL	shift, and go to state 40
+    IDENTIFIER	shift, and go to state 41
+
+    using_array_variable	go to state 42
+    arithmetic_expression	go to state 100
+    var_identifier	go to state 47
+    var_or_const_identifier	go to state 48
+
+
+
+state 56
+
+    print_expression  ->  STRING_LITERAL .   (rule 51)
+
+    $default	reduce using rule 51 (print_expression)
+
+
+
+state 57
+
+    print_command  ->  PRINT print_expression_list . nl   (rule 46)
+
+    NL  	shift, and go to state 1
+
+    nl  	go to state 101
+
+
+
+state 58
+
+    print_expression_list  ->  print_expression . tCOMMA_print_expression_ast   (rule 47)
+
+    COMMA	shift, and go to state 102
+
+    $default	reduce using rule 48 (tCOMMA_print_expression_ast)
+
+    tCOMMA_print_expression_ast	go to state 103
+
+
+
+state 59
+
+    print_expression  ->  expression .   (rule 50)
+
+    $default	reduce using rule 50 (print_expression)
+
+
+
+state 60
+
+    expression  ->  arithmetic_expression .   (rule 56)
+    arithmetic_expression  ->  arithmetic_expression . MUL arithmetic_expression   (rule 64)
+    arithmetic_expression  ->  arithmetic_expression . DIV arithmetic_expression   (rule 65)
+    arithmetic_expression  ->  arithmetic_expression . MINUS arithmetic_expression   (rule 66)
+    arithmetic_expression  ->  arithmetic_expression . PLUS arithmetic_expression   (rule 67)
+    arithmetic_expression  ->  arithmetic_expression . MOD arithmetic_expression   (rule 68)
+
+    PLUS	shift, and go to state 88
+    MINUS	shift, and go to state 89
+    MUL 	shift, and go to state 90
+    DIV 	shift, and go to state 91
+    MOD 	shift, and go to state 92
+
+    $default	reduce using rule 56 (expression)
+
+
+
+state 61
+
+    input_command  ->  INPUT using_variable . nl   (rule 41)
+
+    NL  	shift, and go to state 1
+
+    nl  	go to state 104
+
+
+
+state 62
+
+    program  ->  nl program .   (rule 7)
+
+    $default	reduce using rule 7 (program)
+
+
+
+state 63
+
+    program  ->  variable_decl program .   (rule 4)
+
+    $default	reduce using rule 4 (program)
+
+
+
+state 64
+
+    program  ->  constant_decl program .   (rule 6)
+
+    $default	reduce using rule 6 (program)
+
+
+
+state 65
+
+    program  ->  command program .   (rule 5)
+
+    $default	reduce using rule 5 (program)
+
+
+
+state 66
+
+    assignment_command  ->  using_variable EQ . expression nl   (rule 37)
+
+    OPAR	shift, and go to state 55
+    MINUS	shift, and go to state 39
+    NUMBER_LITERAL	shift, and go to state 40
+    IDENTIFIER	shift, and go to state 41
+
+    using_array_variable	go to state 42
+    expression	go to state 105
+    arithmetic_expression	go to state 60
+    var_identifier	go to state 47
+    var_or_const_identifier	go to state 48
+
+
+
+state 67
+
+    using_array_variable  ->  var_identifier OSQR . expression_list CSQR   (rule 44)
+
+    OPAR	shift, and go to state 55
+    MINUS	shift, and go to state 39
+    NUMBER_LITERAL	shift, and go to state 40
+    IDENTIFIER	shift, and go to state 41
+
+    using_array_variable	go to state 42
+    expression_list	go to state 106
+    expression	go to state 107
+    arithmetic_expression	go to state 60
+    var_identifier	go to state 47
+    var_or_const_identifier	go to state 48
+
+
+
+state 68
+
+    assignment_command  ->  LET using_variable EQ . expression nl   (rule 38)
+
+    OPAR	shift, and go to state 55
+    MINUS	shift, and go to state 39
+    NUMBER_LITERAL	shift, and go to state 40
+    IDENTIFIER	shift, and go to state 41
+
+    using_array_variable	go to state 42
+    expression	go to state 108
+    arithmetic_expression	go to state 60
+    var_identifier	go to state 47
+    var_or_const_identifier	go to state 48
+
+
+
+state 69
+
+    variable_decl  ->  DIM declared_variable_list nl .   (rule 8)
+
+    $default	reduce using rule 8 (variable_decl)
+
+
+
+state 70
+
+    tCOMMA_e_declared_variable_ast  ->  COMMA . declared_variable tCOMMA_e_declared_variable_ast   (rule 11)
+
+    IDENTIFIER	shift, and go to state 12
+
+    declared_variable	go to state 109
+    var_identifier	go to state 34
+
+
+
+state 71
+
+    declared_variable_list  ->  declared_variable tCOMMA_e_declared_variable_ast .   (rule 9)
+
+    $default	reduce using rule 9 (declared_variable_list)
+
+
+
+state 72
+
+    tOSQR_e_expression_list_e_tCSQR_01  ->  OSQR . expression_list CSQR   (rule 14)
+
+    OPAR	shift, and go to state 55
+    MINUS	shift, and go to state 39
+    NUMBER_LITERAL	shift, and go to state 40
+    IDENTIFIER	shift, and go to state 41
+
+    using_array_variable	go to state 42
+    expression_list	go to state 110
+    expression	go to state 107
+    arithmetic_expression	go to state 60
+    var_identifier	go to state 47
+    var_or_const_identifier	go to state 48
+
+
+
+state 73
+
+    declared_variable  ->  var_identifier tOSQR_e_expression_list_e_tCSQR_01 .   (rule 12)
+
+    $default	reduce using rule 12 (declared_variable)
+
+
+
+state 74
+
+    constant_decl  ->  CONST const_identifier EQ . constant_expression nl   (rule 15)
+
+    OPAR	shift, and go to state 111
+    MINUS	shift, and go to state 112
+    NUMBER_LITERAL	shift, and go to state 113
+    IDENTIFIER	shift, and go to state 35
+
+    constant_expression	go to state 114
+    const_identifier	go to state 115
+
+
+
+state 75
+
+    boolean_expression  ->  boolean_expression . AND boolean_expression   (rule 58)
+    boolean_expression  ->  boolean_expression . OR boolean_expression   (rule 59)
+    boolean_expression  ->  OPAR boolean_expression . CPAR   (rule 61)
+
+    CPAR	shift, and go to state 116
+    AND 	shift, and go to state 80
+    OR  	shift, and go to state 81
+
+
+
+state 76
+
+    relational_expression  ->  arithmetic_expression . relational_op arithmetic_expression   (rule 62)
+    arithmetic_expression  ->  arithmetic_expression . MUL arithmetic_expression   (rule 64)
+    arithmetic_expression  ->  arithmetic_expression . DIV arithmetic_expression   (rule 65)
+    arithmetic_expression  ->  arithmetic_expression . MINUS arithmetic_expression   (rule 66)
+    arithmetic_expression  ->  arithmetic_expression . PLUS arithmetic_expression   (rule 67)
+    arithmetic_expression  ->  arithmetic_expression . MOD arithmetic_expression   (rule 68)
+    arithmetic_expression  ->  OPAR arithmetic_expression . CPAR   (rule 69)
+
+    CPAR	shift, and go to state 117
+    EQ  	shift, and go to state 82
+    NE  	shift, and go to state 83
+    LT  	shift, and go to state 84
+    GT  	shift, and go to state 85
+    LE  	shift, and go to state 86
+    GE  	shift, and go to state 87
+    PLUS	shift, and go to state 88
+    MINUS	shift, and go to state 89
+    MUL 	shift, and go to state 90
+    DIV 	shift, and go to state 91
+    MOD 	shift, and go to state 92
+
+    relational_op	go to state 93
+
+
+
+state 77
+
+    boolean_expression  ->  NOT boolean_expression .   (rule 57)
+    boolean_expression  ->  boolean_expression . AND boolean_expression   (rule 58)
+    boolean_expression  ->  boolean_expression . OR boolean_expression   (rule 59)
+
+
+    $default	reduce using rule 57 (boolean_expression)
+
+
+
+state 78
+
+    arithmetic_expression  ->  MINUS arithmetic_expression .   (rule 63)
+    arithmetic_expression  ->  arithmetic_expression . MUL arithmetic_expression   (rule 64)
+    arithmetic_expression  ->  arithmetic_expression . DIV arithmetic_expression   (rule 65)
+    arithmetic_expression  ->  arithmetic_expression . MINUS arithmetic_expression   (rule 66)
+    arithmetic_expression  ->  arithmetic_expression . PLUS arithmetic_expression   (rule 67)
+    arithmetic_expression  ->  arithmetic_expression . MOD arithmetic_expression   (rule 68)
+
+
+    $default	reduce using rule 63 (arithmetic_expression)
+
+
+
+state 79
+
+    if_command  ->  IF condition THEN . nl variable_decl_ou_constant_decl_ou_command_ast else_nl_01 ENDIF nl   (rule 25)
+
+    NL  	shift, and go to state 1
+
+    nl  	go to state 118
+
+
+
+state 80
+
+    boolean_expression  ->  boolean_expression AND . boolean_expression   (rule 58)
+
+    OPAR	shift, and go to state 37
+    NOT 	shift, and go to state 38
+    MINUS	shift, and go to state 39
+    NUMBER_LITERAL	shift, and go to state 40
+    IDENTIFIER	shift, and go to state 41
+
+    using_array_variable	go to state 42
+    boolean_expression	go to state 119
+    relational_expression	go to state 45
+    arithmetic_expression	go to state 46
+    var_identifier	go to state 47
+    var_or_const_identifier	go to state 48
+
+
+
+state 81
+
+    boolean_expression  ->  boolean_expression OR . boolean_expression   (rule 59)
+
+    OPAR	shift, and go to state 37
+    NOT 	shift, and go to state 38
+    MINUS	shift, and go to state 39
+    NUMBER_LITERAL	shift, and go to state 40
+    IDENTIFIER	shift, and go to state 41
+
+    using_array_variable	go to state 42
+    boolean_expression	go to state 120
+    relational_expression	go to state 45
+    arithmetic_expression	go to state 46
+    var_identifier	go to state 47
+    var_or_const_identifier	go to state 48
+
+
+
+state 82
+
+    relational_op  ->  EQ .   (rule 86)
+
+    $default	reduce using rule 86 (relational_op)
+
+
+
+state 83
+
+    relational_op  ->  NE .   (rule 87)
+
+    $default	reduce using rule 87 (relational_op)
+
+
+
+state 84
+
+    relational_op  ->  LT .   (rule 88)
+
+    $default	reduce using rule 88 (relational_op)
+
+
+
+state 85
+
+    relational_op  ->  GT .   (rule 89)
+
+    $default	reduce using rule 89 (relational_op)
+
+
+
+state 86
+
+    relational_op  ->  LE .   (rule 90)
+
+    $default	reduce using rule 90 (relational_op)
+
+
+
+state 87
+
+    relational_op  ->  GE .   (rule 91)
+
+    $default	reduce using rule 91 (relational_op)
+
+
+
+state 88
+
+    arithmetic_expression  ->  arithmetic_expression PLUS . arithmetic_expression   (rule 67)
+
+    OPAR	shift, and go to state 55
+    MINUS	shift, and go to state 39
+    NUMBER_LITERAL	shift, and go to state 40
+    IDENTIFIER	shift, and go to state 41
+
+    using_array_variable	go to state 42
+    arithmetic_expression	go to state 121
+    var_identifier	go to state 47
+    var_or_const_identifier	go to state 48
+
+
+
+state 89
+
+    arithmetic_expression  ->  arithmetic_expression MINUS . arithmetic_expression   (rule 66)
+
+    OPAR	shift, and go to state 55
+    MINUS	shift, and go to state 39
+    NUMBER_LITERAL	shift, and go to state 40
+    IDENTIFIER	shift, and go to state 41
+
+    using_array_variable	go to state 42
+    arithmetic_expression	go to state 122
+    var_identifier	go to state 47
+    var_or_const_identifier	go to state 48
+
+
+
+state 90
+
+    arithmetic_expression  ->  arithmetic_expression MUL . arithmetic_expression   (rule 64)
+
+    OPAR	shift, and go to state 55
+    MINUS	shift, and go to state 39
+    NUMBER_LITERAL	shift, and go to state 40
+    IDENTIFIER	shift, and go to state 41
+
+    using_array_variable	go to state 42
+    arithmetic_expression	go to state 123
+    var_identifier	go to state 47
+    var_or_const_identifier	go to state 48
+
+
+
+state 91
+
+    arithmetic_expression  ->  arithmetic_expression DIV . arithmetic_expression   (rule 65)
+
+    OPAR	shift, and go to state 55
+    MINUS	shift, and go to state 39
+    NUMBER_LITERAL	shift, and go to state 40
+    IDENTIFIER	shift, and go to state 41
+
+    using_array_variable	go to state 42
+    arithmetic_expression	go to state 124
+    var_identifier	go to state 47
+    var_or_const_identifier	go to state 48
+
+
+
+state 92
+
+    arithmetic_expression  ->  arithmetic_expression MOD . arithmetic_expression   (rule 68)
+
+    OPAR	shift, and go to state 55
+    MINUS	shift, and go to state 39
+    NUMBER_LITERAL	shift, and go to state 40
+    IDENTIFIER	shift, and go to state 41
+
+    using_array_variable	go to state 42
+    arithmetic_expression	go to state 125
+    var_identifier	go to state 47
+    var_or_const_identifier	go to state 48
+
+
+
+state 93
+
+    relational_expression  ->  arithmetic_expression relational_op . arithmetic_expression   (rule 62)
+
+    OPAR	shift, and go to state 55
+    MINUS	shift, and go to state 39
+    NUMBER_LITERAL	shift, and go to state 40
+    IDENTIFIER	shift, and go to state 41
+
+    using_array_variable	go to state 42
+    arithmetic_expression	go to state 126
+    var_identifier	go to state 47
+    var_or_const_identifier	go to state 48
+
+
+
+state 94
+
+    for_command  ->  FOR using_simple_variable EQ . expression TO expression tSTEP_e_expression_01 nl variable_decl_ou_constant_decl_ou_command_ast NEXT nl   (rule 28)
+
+    OPAR	shift, and go to state 55
+    MINUS	shift, and go to state 39
+    NUMBER_LITERAL	shift, and go to state 40
+    IDENTIFIER	shift, and go to state 41
+
+    using_array_variable	go to state 42
+    expression	go to state 127
+    arithmetic_expression	go to state 60
+    var_identifier	go to state 47
+    var_or_const_identifier	go to state 48
+
+
+
+state 95
+
+    do_while_command  ->  DO WHILE condition . nl variable_decl_ou_constant_decl_ou_command_ast LOOP nl   (rule 31)
+
+    NL  	shift, and go to state 1
+
+    nl  	go to state 128
+
+
+
+state 96
+
+    variable_decl_ou_constant_decl_ou_command_ast  ->  variable_decl . variable_decl_ou_constant_decl_ou_command_ast   (rule 34)
+
+    LET 	shift, and go to state 2
+    DIM 	shift, and go to state 3
+    CONST	shift, and go to state 4
+    IF  	shift, and go to state 5
+    FOR 	shift, and go to state 6
+    DO  	shift, and go to state 7
+    EXITLOOP	shift, and go to state 8
+    END 	shift, and go to state 9
+    PRINT	shift, and go to state 10
+    INPUT	shift, and go to state 11
+    IDENTIFIER	shift, and go to state 12
+
+    $default	reduce using rule 33 (variable_decl_ou_constant_decl_ou_command_ast)
+
+    variable_decl	go to state 96
+    constant_decl	go to state 97
+    command	go to state 98
+    if_command	go to state 18
+    for_command	go to state 19
+    do_while_command	go to state 20
+    loop_until_command	go to state 21
+    variable_decl_ou_constant_decl_ou_command_ast	go to state 129
+    assignment_command	go to state 22
+    end_command	go to state 23
+    exit_loop_command	go to state 24
+    input_command	go to state 25
+    using_variable	go to state 26
+    using_array_variable	go to state 27
+    using_simple_variable	go to state 28
+    print_command	go to state 29
+    var_identifier	go to state 30
+
+
+
+state 97
+
+    variable_decl_ou_constant_decl_ou_command_ast  ->  constant_decl . variable_decl_ou_constant_decl_ou_command_ast   (rule 35)
+
+    LET 	shift, and go to state 2
+    DIM 	shift, and go to state 3
+    CONST	shift, and go to state 4
+    IF  	shift, and go to state 5
+    FOR 	shift, and go to state 6
+    DO  	shift, and go to state 7
+    EXITLOOP	shift, and go to state 8
+    END 	shift, and go to state 9
+    PRINT	shift, and go to state 10
+    INPUT	shift, and go to state 11
+    IDENTIFIER	shift, and go to state 12
+
+    $default	reduce using rule 33 (variable_decl_ou_constant_decl_ou_command_ast)
+
+    variable_decl	go to state 96
+    constant_decl	go to state 97
+    command	go to state 98
+    if_command	go to state 18
+    for_command	go to state 19
+    do_while_command	go to state 20
+    loop_until_command	go to state 21
+    variable_decl_ou_constant_decl_ou_command_ast	go to state 130
+    assignment_command	go to state 22
+    end_command	go to state 23
+    exit_loop_command	go to state 24
+    input_command	go to state 25
+    using_variable	go to state 26
+    using_array_variable	go to state 27
+    using_simple_variable	go to state 28
+    print_command	go to state 29
+    var_identifier	go to state 30
+
+
+
+state 98
+
+    variable_decl_ou_constant_decl_ou_command_ast  ->  command . variable_decl_ou_constant_decl_ou_command_ast   (rule 36)
+
+    LET 	shift, and go to state 2
+    DIM 	shift, and go to state 3
+    CONST	shift, and go to state 4
+    IF  	shift, and go to state 5
+    FOR 	shift, and go to state 6
+    DO  	shift, and go to state 7
+    EXITLOOP	shift, and go to state 8
+    END 	shift, and go to state 9
+    PRINT	shift, and go to state 10
+    INPUT	shift, and go to state 11
+    IDENTIFIER	shift, and go to state 12
+
+    $default	reduce using rule 33 (variable_decl_ou_constant_decl_ou_command_ast)
+
+    variable_decl	go to state 96
+    constant_decl	go to state 97
+    command	go to state 98
+    if_command	go to state 18
+    for_command	go to state 19
+    do_while_command	go to state 20
+    loop_until_command	go to state 21
+    variable_decl_ou_constant_decl_ou_command_ast	go to state 131
+    assignment_command	go to state 22
+    end_command	go to state 23
+    exit_loop_command	go to state 24
+    input_command	go to state 25
+    using_variable	go to state 26
+    using_array_variable	go to state 27
+    using_simple_variable	go to state 28
+    print_command	go to state 29
+    var_identifier	go to state 30
+
+
+
+state 99
+
+    loop_until_command  ->  DO nl variable_decl_ou_constant_decl_ou_command_ast . LOOP UNTIL condition nl   (rule 32)
+
+    LOOP	shift, and go to state 132
+
+
+
+state 100
+
+    arithmetic_expression  ->  arithmetic_expression . MUL arithmetic_expression   (rule 64)
+    arithmetic_expression  ->  arithmetic_expression . DIV arithmetic_expression   (rule 65)
+    arithmetic_expression  ->  arithmetic_expression . MINUS arithmetic_expression   (rule 66)
+    arithmetic_expression  ->  arithmetic_expression . PLUS arithmetic_expression   (rule 67)
+    arithmetic_expression  ->  arithmetic_expression . MOD arithmetic_expression   (rule 68)
+    arithmetic_expression  ->  OPAR arithmetic_expression . CPAR   (rule 69)
+
+    CPAR	shift, and go to state 117
+    PLUS	shift, and go to state 88
+    MINUS	shift, and go to state 89
+    MUL 	shift, and go to state 90
+    DIV 	shift, and go to state 91
+    MOD 	shift, and go to state 92
+
+
+
+state 101
+
+    print_command  ->  PRINT print_expression_list nl .   (rule 46)
+
+    $default	reduce using rule 46 (print_command)
+
+
+
+state 102
+
+    tCOMMA_print_expression_ast  ->  COMMA . print_expression tCOMMA_print_expression_ast   (rule 49)
+
+    OPAR	shift, and go to state 55
+    MINUS	shift, and go to state 39
+    STRING_LITERAL	shift, and go to state 56
+    NUMBER_LITERAL	shift, and go to state 40
+    IDENTIFIER	shift, and go to state 41
+
+    using_array_variable	go to state 42
+    print_expression	go to state 133
+    expression	go to state 59
+    arithmetic_expression	go to state 60
+    var_identifier	go to state 47
+    var_or_const_identifier	go to state 48
+
+
+
+state 103
+
+    print_expression_list  ->  print_expression tCOMMA_print_expression_ast .   (rule 47)
+
+    $default	reduce using rule 47 (print_expression_list)
+
+
+
+state 104
+
+    input_command  ->  INPUT using_variable nl .   (rule 41)
+
+    $default	reduce using rule 41 (input_command)
+
+
+
+state 105
+
+    assignment_command  ->  using_variable EQ expression . nl   (rule 37)
+
+    NL  	shift, and go to state 1
+
+    nl  	go to state 134
+
+
+
+state 106
+
+    using_array_variable  ->  var_identifier OSQR expression_list . CSQR   (rule 44)
+
+    CSQR	shift, and go to state 135
+
+
+
+state 107
+
+    expression_list  ->  expression . tCOMMA_e_expression_ast   (rule 53)
+
+    COMMA	shift, and go to state 136
+
+    $default	reduce using rule 54 (tCOMMA_e_expression_ast)
+
+    tCOMMA_e_expression_ast	go to state 137
+
+
+
+state 108
+
+    assignment_command  ->  LET using_variable EQ expression . nl   (rule 38)
+
+    NL  	shift, and go to state 1
+
+    nl  	go to state 138
+
+
+
+state 109
+
+    tCOMMA_e_declared_variable_ast  ->  COMMA declared_variable . tCOMMA_e_declared_variable_ast   (rule 11)
+
+    COMMA	shift, and go to state 70
+
+    $default	reduce using rule 10 (tCOMMA_e_declared_variable_ast)
+
+    tCOMMA_e_declared_variable_ast	go to state 139
+
+
+
+state 110
+
+    tOSQR_e_expression_list_e_tCSQR_01  ->  OSQR expression_list . CSQR   (rule 14)
+
+    CSQR	shift, and go to state 140
+
+
+
+state 111
+
+    constant_expression  ->  OPAR . constant_expression CPAR   (rule 83)
+
+    OPAR	shift, and go to state 111
+    MINUS	shift, and go to state 112
+    NUMBER_LITERAL	shift, and go to state 113
+    IDENTIFIER	shift, and go to state 35
+
+    constant_expression	go to state 141
+    const_identifier	go to state 115
+
+
+
+state 112
+
+    constant_expression  ->  MINUS . constant_expression   (rule 77)
+
+    OPAR	shift, and go to state 111
+    MINUS	shift, and go to state 112
+    NUMBER_LITERAL	shift, and go to state 113
+    IDENTIFIER	shift, and go to state 35
+
+    constant_expression	go to state 142
+    const_identifier	go to state 115
+
+
+
+state 113
+
+    constant_expression  ->  NUMBER_LITERAL .   (rule 84)
+
+    $default	reduce using rule 84 (constant_expression)
+
+
+
+state 114
+
+    constant_decl  ->  CONST const_identifier EQ constant_expression . nl   (rule 15)
+    constant_expression  ->  constant_expression . MUL constant_expression   (rule 78)
+    constant_expression  ->  constant_expression . DIV constant_expression   (rule 79)
+    constant_expression  ->  constant_expression . MOD constant_expression   (rule 80)
+    constant_expression  ->  constant_expression . MINUS constant_expression   (rule 81)
+    constant_expression  ->  constant_expression . PLUS constant_expression   (rule 82)
+
+    NL  	shift, and go to state 1
+    PLUS	shift, and go to state 143
+    MINUS	shift, and go to state 144
+    MUL 	shift, and go to state 145
+    DIV 	shift, and go to state 146
+    MOD 	shift, and go to state 147
+
+    nl  	go to state 148
+
+
+
+state 115
+
+    constant_expression  ->  const_identifier .   (rule 85)
+
+    $default	reduce using rule 85 (constant_expression)
+
+
+
+state 116
+
+    boolean_expression  ->  OPAR boolean_expression CPAR .   (rule 61)
+
+    $default	reduce using rule 61 (boolean_expression)
+
+
+
+state 117
+
+    arithmetic_expression  ->  OPAR arithmetic_expression CPAR .   (rule 69)
+
+    $default	reduce using rule 69 (arithmetic_expression)
+
+
+
+state 118
+
+    if_command  ->  IF condition THEN nl . variable_decl_ou_constant_decl_ou_command_ast else_nl_01 ENDIF nl   (rule 25)
+
+    LET 	shift, and go to state 2
+    DIM 	shift, and go to state 3
+    CONST	shift, and go to state 4
+    IF  	shift, and go to state 5
+    FOR 	shift, and go to state 6
+    DO  	shift, and go to state 7
+    EXITLOOP	shift, and go to state 8
+    END 	shift, and go to state 9
+    PRINT	shift, and go to state 10
+    INPUT	shift, and go to state 11
+    IDENTIFIER	shift, and go to state 12
+
+    $default	reduce using rule 33 (variable_decl_ou_constant_decl_ou_command_ast)
+
+    variable_decl	go to state 96
+    constant_decl	go to state 97
+    command	go to state 98
+    if_command	go to state 18
+    for_command	go to state 19
+    do_while_command	go to state 20
+    loop_until_command	go to state 21
+    variable_decl_ou_constant_decl_ou_command_ast	go to state 149
+    assignment_command	go to state 22
+    end_command	go to state 23
+    exit_loop_command	go to state 24
+    input_command	go to state 25
+    using_variable	go to state 26
+    using_array_variable	go to state 27
+    using_simple_variable	go to state 28
+    print_command	go to state 29
+    var_identifier	go to state 30
+
+
+
+state 119
+
+    boolean_expression  ->  boolean_expression . AND boolean_expression   (rule 58)
+    boolean_expression  ->  boolean_expression AND boolean_expression .   (rule 58)
+    boolean_expression  ->  boolean_expression . OR boolean_expression   (rule 59)
+
+
+    $default	reduce using rule 58 (boolean_expression)
+
+
+
+state 120
+
+    boolean_expression  ->  boolean_expression . AND boolean_expression   (rule 58)
+    boolean_expression  ->  boolean_expression . OR boolean_expression   (rule 59)
+    boolean_expression  ->  boolean_expression OR boolean_expression .   (rule 59)
+
+
+    $default	reduce using rule 59 (boolean_expression)
+
+
+
+state 121
+
+    arithmetic_expression  ->  arithmetic_expression . MUL arithmetic_expression   (rule 64)
+    arithmetic_expression  ->  arithmetic_expression . DIV arithmetic_expression   (rule 65)
+    arithmetic_expression  ->  arithmetic_expression . MINUS arithmetic_expression   (rule 66)
+    arithmetic_expression  ->  arithmetic_expression . PLUS arithmetic_expression   (rule 67)
+    arithmetic_expression  ->  arithmetic_expression PLUS arithmetic_expression .   (rule 67)
+    arithmetic_expression  ->  arithmetic_expression . MOD arithmetic_expression   (rule 68)
+
+    MUL 	shift, and go to state 90
+    DIV 	shift, and go to state 91
+    MOD 	shift, and go to state 92
+
+    $default	reduce using rule 67 (arithmetic_expression)
+
+
+
+state 122
+
+    arithmetic_expression  ->  arithmetic_expression . MUL arithmetic_expression   (rule 64)
+    arithmetic_expression  ->  arithmetic_expression . DIV arithmetic_expression   (rule 65)
+    arithmetic_expression  ->  arithmetic_expression . MINUS arithmetic_expression   (rule 66)
+    arithmetic_expression  ->  arithmetic_expression MINUS arithmetic_expression .   (rule 66)
+    arithmetic_expression  ->  arithmetic_expression . PLUS arithmetic_expression   (rule 67)
+    arithmetic_expression  ->  arithmetic_expression . MOD arithmetic_expression   (rule 68)
+
+    MUL 	shift, and go to state 90
+    DIV 	shift, and go to state 91
+    MOD 	shift, and go to state 92
+
+    $default	reduce using rule 66 (arithmetic_expression)
+
+
+
+state 123
+
+    arithmetic_expression  ->  arithmetic_expression . MUL arithmetic_expression   (rule 64)
+    arithmetic_expression  ->  arithmetic_expression MUL arithmetic_expression .   (rule 64)
+    arithmetic_expression  ->  arithmetic_expression . DIV arithmetic_expression   (rule 65)
+    arithmetic_expression  ->  arithmetic_expression . MINUS arithmetic_expression   (rule 66)
+    arithmetic_expression  ->  arithmetic_expression . PLUS arithmetic_expression   (rule 67)
+    arithmetic_expression  ->  arithmetic_expression . MOD arithmetic_expression   (rule 68)
+
+
+    $default	reduce using rule 64 (arithmetic_expression)
+
+
+
+state 124
+
+    arithmetic_expression  ->  arithmetic_expression . MUL arithmetic_expression   (rule 64)
+    arithmetic_expression  ->  arithmetic_expression . DIV arithmetic_expression   (rule 65)
+    arithmetic_expression  ->  arithmetic_expression DIV arithmetic_expression .   (rule 65)
+    arithmetic_expression  ->  arithmetic_expression . MINUS arithmetic_expression   (rule 66)
+    arithmetic_expression  ->  arithmetic_expression . PLUS arithmetic_expression   (rule 67)
+    arithmetic_expression  ->  arithmetic_expression . MOD arithmetic_expression   (rule 68)
+
+
+    $default	reduce using rule 65 (arithmetic_expression)
+
+
+
+state 125
+
+    arithmetic_expression  ->  arithmetic_expression . MUL arithmetic_expression   (rule 64)
+    arithmetic_expression  ->  arithmetic_expression . DIV arithmetic_expression   (rule 65)
+    arithmetic_expression  ->  arithmetic_expression . MINUS arithmetic_expression   (rule 66)
+    arithmetic_expression  ->  arithmetic_expression . PLUS arithmetic_expression   (rule 67)
+    arithmetic_expression  ->  arithmetic_expression . MOD arithmetic_expression   (rule 68)
+    arithmetic_expression  ->  arithmetic_expression MOD arithmetic_expression .   (rule 68)
+
+
+    $default	reduce using rule 68 (arithmetic_expression)
+
+
+
+state 126
+
+    relational_expression  ->  arithmetic_expression relational_op arithmetic_expression .   (rule 62)
+    arithmetic_expression  ->  arithmetic_expression . MUL arithmetic_expression   (rule 64)
+    arithmetic_expression  ->  arithmetic_expression . DIV arithmetic_expression   (rule 65)
+    arithmetic_expression  ->  arithmetic_expression . MINUS arithmetic_expression   (rule 66)
+    arithmetic_expression  ->  arithmetic_expression . PLUS arithmetic_expression   (rule 67)
+    arithmetic_expression  ->  arithmetic_expression . MOD arithmetic_expression   (rule 68)
+
+    PLUS	shift, and go to state 88
+    MINUS	shift, and go to state 89
+    MUL 	shift, and go to state 90
+    DIV 	shift, and go to state 91
+    MOD 	shift, and go to state 92
+
+    $default	reduce using rule 62 (relational_expression)
+
+
+
+state 127
+
+    for_command  ->  FOR using_simple_variable EQ expression . TO expression tSTEP_e_expression_01 nl variable_decl_ou_constant_decl_ou_command_ast NEXT nl   (rule 28)
+
+    TO  	shift, and go to state 150
+
+
+
+state 128
+
+    do_while_command  ->  DO WHILE condition nl . variable_decl_ou_constant_decl_ou_command_ast LOOP nl   (rule 31)
+
+    LET 	shift, and go to state 2
+    DIM 	shift, and go to state 3
+    CONST	shift, and go to state 4
+    IF  	shift, and go to state 5
+    FOR 	shift, and go to state 6
+    DO  	shift, and go to state 7
+    EXITLOOP	shift, and go to state 8
+    END 	shift, and go to state 9
+    PRINT	shift, and go to state 10
+    INPUT	shift, and go to state 11
+    IDENTIFIER	shift, and go to state 12
+
+    $default	reduce using rule 33 (variable_decl_ou_constant_decl_ou_command_ast)
+
+    variable_decl	go to state 96
+    constant_decl	go to state 97
+    command	go to state 98
+    if_command	go to state 18
+    for_command	go to state 19
+    do_while_command	go to state 20
+    loop_until_command	go to state 21
+    variable_decl_ou_constant_decl_ou_command_ast	go to state 151
+    assignment_command	go to state 22
+    end_command	go to state 23
+    exit_loop_command	go to state 24
+    input_command	go to state 25
+    using_variable	go to state 26
+    using_array_variable	go to state 27
+    using_simple_variable	go to state 28
+    print_command	go to state 29
+    var_identifier	go to state 30
+
+
+
+state 129
+
+    variable_decl_ou_constant_decl_ou_command_ast  ->  variable_decl variable_decl_ou_constant_decl_ou_command_ast .   (rule 34)
+
+    $default	reduce using rule 34 (variable_decl_ou_constant_decl_ou_command_ast)
+
+
+
+state 130
+
+    variable_decl_ou_constant_decl_ou_command_ast  ->  constant_decl variable_decl_ou_constant_decl_ou_command_ast .   (rule 35)
+
+    $default	reduce using rule 35 (variable_decl_ou_constant_decl_ou_command_ast)
+
+
+
+state 131
+
+    variable_decl_ou_constant_decl_ou_command_ast  ->  command variable_decl_ou_constant_decl_ou_command_ast .   (rule 36)
+
+    $default	reduce using rule 36 (variable_decl_ou_constant_decl_ou_command_ast)
+
+
+
+state 132
+
+    loop_until_command  ->  DO nl variable_decl_ou_constant_decl_ou_command_ast LOOP . UNTIL condition nl   (rule 32)
+
+    UNTIL	shift, and go to state 152
+
+
+
+state 133
+
+    tCOMMA_print_expression_ast  ->  COMMA print_expression . tCOMMA_print_expression_ast   (rule 49)
+
+    COMMA	shift, and go to state 102
+
+    $default	reduce using rule 48 (tCOMMA_print_expression_ast)
+
+    tCOMMA_print_expression_ast	go to state 153
+
+
+
+state 134
+
+    assignment_command  ->  using_variable EQ expression nl .   (rule 37)
+
+    $default	reduce using rule 37 (assignment_command)
+
+
+
+state 135
+
+    using_array_variable  ->  var_identifier OSQR expression_list CSQR .   (rule 44)
+
+    $default	reduce using rule 44 (using_array_variable)
+
+
+
+state 136
+
+    tCOMMA_e_expression_ast  ->  COMMA . expression tCOMMA_e_expression_ast   (rule 55)
+
+    OPAR	shift, and go to state 55
+    MINUS	shift, and go to state 39
+    NUMBER_LITERAL	shift, and go to state 40
+    IDENTIFIER	shift, and go to state 41
+
+    using_array_variable	go to state 42
+    expression	go to state 154
+    arithmetic_expression	go to state 60
+    var_identifier	go to state 47
+    var_or_const_identifier	go to state 48
+
+
+
+state 137
+
+    expression_list  ->  expression tCOMMA_e_expression_ast .   (rule 53)
+
+    $default	reduce using rule 53 (expression_list)
+
+
+
+state 138
+
+    assignment_command  ->  LET using_variable EQ expression nl .   (rule 38)
+
+    $default	reduce using rule 38 (assignment_command)
+
+
+
+state 139
+
+    tCOMMA_e_declared_variable_ast  ->  COMMA declared_variable tCOMMA_e_declared_variable_ast .   (rule 11)
+
+    $default	reduce using rule 11 (tCOMMA_e_declared_variable_ast)
+
+
+
+state 140
+
+    tOSQR_e_expression_list_e_tCSQR_01  ->  OSQR expression_list CSQR .   (rule 14)
+
+    $default	reduce using rule 14 (tOSQR_e_expression_list_e_tCSQR_01)
+
+
+
+state 141
+
+    constant_expression  ->  constant_expression . MUL constant_expression   (rule 78)
+    constant_expression  ->  constant_expression . DIV constant_expression   (rule 79)
+    constant_expression  ->  constant_expression . MOD constant_expression   (rule 80)
+    constant_expression  ->  constant_expression . MINUS constant_expression   (rule 81)
+    constant_expression  ->  constant_expression . PLUS constant_expression   (rule 82)
+    constant_expression  ->  OPAR constant_expression . CPAR   (rule 83)
+
+    CPAR	shift, and go to state 155
+    PLUS	shift, and go to state 143
+    MINUS	shift, and go to state 144
+    MUL 	shift, and go to state 145
+    DIV 	shift, and go to state 146
+    MOD 	shift, and go to state 147
+
+
+
+state 142
+
+    constant_expression  ->  MINUS constant_expression .   (rule 77)
+    constant_expression  ->  constant_expression . MUL constant_expression   (rule 78)
+    constant_expression  ->  constant_expression . DIV constant_expression   (rule 79)
+    constant_expression  ->  constant_expression . MOD constant_expression   (rule 80)
+    constant_expression  ->  constant_expression . MINUS constant_expression   (rule 81)
+    constant_expression  ->  constant_expression . PLUS constant_expression   (rule 82)
+
+    MUL 	shift, and go to state 145
+    DIV 	shift, and go to state 146
+    MOD 	shift, and go to state 147
+
+    $default	reduce using rule 77 (constant_expression)
+
+
+
+state 143
+
+    constant_expression  ->  constant_expression PLUS . constant_expression   (rule 82)
+
+    OPAR	shift, and go to state 111
+    MINUS	shift, and go to state 112
+    NUMBER_LITERAL	shift, and go to state 113
+    IDENTIFIER	shift, and go to state 35
+
+    constant_expression	go to state 156
+    const_identifier	go to state 115
+
+
+
+state 144
+
+    constant_expression  ->  constant_expression MINUS . constant_expression   (rule 81)
+
+    OPAR	shift, and go to state 111
+    MINUS	shift, and go to state 112
+    NUMBER_LITERAL	shift, and go to state 113
+    IDENTIFIER	shift, and go to state 35
+
+    constant_expression	go to state 157
+    const_identifier	go to state 115
+
+
+
+state 145
+
+    constant_expression  ->  constant_expression MUL . constant_expression   (rule 78)
+
+    OPAR	shift, and go to state 111
+    MINUS	shift, and go to state 112
+    NUMBER_LITERAL	shift, and go to state 113
+    IDENTIFIER	shift, and go to state 35
+
+    constant_expression	go to state 158
+    const_identifier	go to state 115
+
+
+
+state 146
+
+    constant_expression  ->  constant_expression DIV . constant_expression   (rule 79)
+
+    OPAR	shift, and go to state 111
+    MINUS	shift, and go to state 112
+    NUMBER_LITERAL	shift, and go to state 113
+    IDENTIFIER	shift, and go to state 35
+
+    constant_expression	go to state 159
+    const_identifier	go to state 115
+
+
+
+state 147
+
+    constant_expression  ->  constant_expression MOD . constant_expression   (rule 80)
+
+    OPAR	shift, and go to state 111
+    MINUS	shift, and go to state 112
+    NUMBER_LITERAL	shift, and go to state 113
+    IDENTIFIER	shift, and go to state 35
+
+    constant_expression	go to state 160
+    const_identifier	go to state 115
+
+
+
+state 148
+
+    constant_decl  ->  CONST const_identifier EQ constant_expression nl .   (rule 15)
+
+    $default	reduce using rule 15 (constant_decl)
+
+
+
+state 149
+
+    if_command  ->  IF condition THEN nl variable_decl_ou_constant_decl_ou_command_ast . else_nl_01 ENDIF nl   (rule 25)
+
+    ELSE	shift, and go to state 161
+
+    $default	reduce using rule 27 (else_nl_01)
+
+    else_nl_01	go to state 162
+
+
+
+state 150
+
+    for_command  ->  FOR using_simple_variable EQ expression TO . expression tSTEP_e_expression_01 nl variable_decl_ou_constant_decl_ou_command_ast NEXT nl   (rule 28)
+
+    OPAR	shift, and go to state 55
+    MINUS	shift, and go to state 39
+    NUMBER_LITERAL	shift, and go to state 40
+    IDENTIFIER	shift, and go to state 41
+
+    using_array_variable	go to state 42
+    expression	go to state 163
+    arithmetic_expression	go to state 60
+    var_identifier	go to state 47
+    var_or_const_identifier	go to state 48
+
+
+
+state 151
+
+    do_while_command  ->  DO WHILE condition nl variable_decl_ou_constant_decl_ou_command_ast . LOOP nl   (rule 31)
+
+    LOOP	shift, and go to state 164
+
+
+
+state 152
+
+    loop_until_command  ->  DO nl variable_decl_ou_constant_decl_ou_command_ast LOOP UNTIL . condition nl   (rule 32)
+
+    OPAR	shift, and go to state 37
+    NOT 	shift, and go to state 38
+    MINUS	shift, and go to state 39
+    NUMBER_LITERAL	shift, and go to state 40
+    IDENTIFIER	shift, and go to state 41
+
+    using_array_variable	go to state 42
+    condition	go to state 165
+    boolean_expression	go to state 44
+    relational_expression	go to state 45
+    arithmetic_expression	go to state 46
+    var_identifier	go to state 47
+    var_or_const_identifier	go to state 48
+
+
+
+state 153
+
+    tCOMMA_print_expression_ast  ->  COMMA print_expression tCOMMA_print_expression_ast .   (rule 49)
+
+    $default	reduce using rule 49 (tCOMMA_print_expression_ast)
+
+
+
+state 154
+
+    tCOMMA_e_expression_ast  ->  COMMA expression . tCOMMA_e_expression_ast   (rule 55)
+
+    COMMA	shift, and go to state 136
+
+    $default	reduce using rule 54 (tCOMMA_e_expression_ast)
+
+    tCOMMA_e_expression_ast	go to state 166
+
+
+
+state 155
+
+    constant_expression  ->  OPAR constant_expression CPAR .   (rule 83)
+
+    $default	reduce using rule 83 (constant_expression)
+
+
+
+state 156
+
+    constant_expression  ->  constant_expression . MUL constant_expression   (rule 78)
+    constant_expression  ->  constant_expression . DIV constant_expression   (rule 79)
+    constant_expression  ->  constant_expression . MOD constant_expression   (rule 80)
+    constant_expression  ->  constant_expression . MINUS constant_expression   (rule 81)
+    constant_expression  ->  constant_expression . PLUS constant_expression   (rule 82)
+    constant_expression  ->  constant_expression PLUS constant_expression .   (rule 82)
+
+    MUL 	shift, and go to state 145
+    DIV 	shift, and go to state 146
+    MOD 	shift, and go to state 147
+
+    $default	reduce using rule 82 (constant_expression)
+
+
+
+state 157
+
+    constant_expression  ->  constant_expression . MUL constant_expression   (rule 78)
+    constant_expression  ->  constant_expression . DIV constant_expression   (rule 79)
+    constant_expression  ->  constant_expression . MOD constant_expression   (rule 80)
+    constant_expression  ->  constant_expression . MINUS constant_expression   (rule 81)
+    constant_expression  ->  constant_expression MINUS constant_expression .   (rule 81)
+    constant_expression  ->  constant_expression . PLUS constant_expression   (rule 82)
+
+    MUL 	shift, and go to state 145
+    DIV 	shift, and go to state 146
+    MOD 	shift, and go to state 147
+
+    $default	reduce using rule 81 (constant_expression)
+
+
+
+state 158
+
+    constant_expression  ->  constant_expression . MUL constant_expression   (rule 78)
+    constant_expression  ->  constant_expression MUL constant_expression .   (rule 78)
+    constant_expression  ->  constant_expression . DIV constant_expression   (rule 79)
+    constant_expression  ->  constant_expression . MOD constant_expression   (rule 80)
+    constant_expression  ->  constant_expression . MINUS constant_expression   (rule 81)
+    constant_expression  ->  constant_expression . PLUS constant_expression   (rule 82)
+
+
+    $default	reduce using rule 78 (constant_expression)
+
+
+
+state 159
+
+    constant_expression  ->  constant_expression . MUL constant_expression   (rule 78)
+    constant_expression  ->  constant_expression . DIV constant_expression   (rule 79)
+    constant_expression  ->  constant_expression DIV constant_expression .   (rule 79)
+    constant_expression  ->  constant_expression . MOD constant_expression   (rule 80)
+    constant_expression  ->  constant_expression . MINUS constant_expression   (rule 81)
+    constant_expression  ->  constant_expression . PLUS constant_expression   (rule 82)
+
+
+    $default	reduce using rule 79 (constant_expression)
+
+
+
+state 160
+
+    constant_expression  ->  constant_expression . MUL constant_expression   (rule 78)
+    constant_expression  ->  constant_expression . DIV constant_expression   (rule 79)
+    constant_expression  ->  constant_expression . MOD constant_expression   (rule 80)
+    constant_expression  ->  constant_expression MOD constant_expression .   (rule 80)
+    constant_expression  ->  constant_expression . MINUS constant_expression   (rule 81)
+    constant_expression  ->  constant_expression . PLUS constant_expression   (rule 82)
+
+
+    $default	reduce using rule 80 (constant_expression)
+
+
+
+state 161
+
+    else_nl_01  ->  ELSE . nl variable_decl_ou_constant_decl_ou_command_ast   (rule 26)
+
+    NL  	shift, and go to state 1
+
+    nl  	go to state 167
+
+
+
+state 162
+
+    if_command  ->  IF condition THEN nl variable_decl_ou_constant_decl_ou_command_ast else_nl_01 . ENDIF nl   (rule 25)
+
+    ENDIF	shift, and go to state 168
+
+
+
+state 163
+
+    for_command  ->  FOR using_simple_variable EQ expression TO expression . tSTEP_e_expression_01 nl variable_decl_ou_constant_decl_ou_command_ast NEXT nl   (rule 28)
+
+    STEP	shift, and go to state 169
+
+    $default	reduce using rule 29 (tSTEP_e_expression_01)
+
+    tSTEP_e_expression_01	go to state 170
+
+
+
+state 164
+
+    do_while_command  ->  DO WHILE condition nl variable_decl_ou_constant_decl_ou_command_ast LOOP . nl   (rule 31)
+
+    NL  	shift, and go to state 1
+
+    nl  	go to state 171
+
+
+
+state 165
+
+    loop_until_command  ->  DO nl variable_decl_ou_constant_decl_ou_command_ast LOOP UNTIL condition . nl   (rule 32)
+
+    NL  	shift, and go to state 1
+
+    nl  	go to state 172
+
+
+
+state 166
+
+    tCOMMA_e_expression_ast  ->  COMMA expression tCOMMA_e_expression_ast .   (rule 55)
+
+    $default	reduce using rule 55 (tCOMMA_e_expression_ast)
+
+
+
+state 167
+
+    else_nl_01  ->  ELSE nl . variable_decl_ou_constant_decl_ou_command_ast   (rule 26)
+
+    LET 	shift, and go to state 2
+    DIM 	shift, and go to state 3
+    CONST	shift, and go to state 4
+    IF  	shift, and go to state 5
+    FOR 	shift, and go to state 6
+    DO  	shift, and go to state 7
+    EXITLOOP	shift, and go to state 8
+    END 	shift, and go to state 9
+    PRINT	shift, and go to state 10
+    INPUT	shift, and go to state 11
+    IDENTIFIER	shift, and go to state 12
+
+    $default	reduce using rule 33 (variable_decl_ou_constant_decl_ou_command_ast)
+
+    variable_decl	go to state 96
+    constant_decl	go to state 97
+    command	go to state 98
+    if_command	go to state 18
+    for_command	go to state 19
+    do_while_command	go to state 20
+    loop_until_command	go to state 21
+    variable_decl_ou_constant_decl_ou_command_ast	go to state 173
+    assignment_command	go to state 22
+    end_command	go to state 23
+    exit_loop_command	go to state 24
+    input_command	go to state 25
+    using_variable	go to state 26
+    using_array_variable	go to state 27
+    using_simple_variable	go to state 28
+    print_command	go to state 29
+    var_identifier	go to state 30
+
+
+
+state 168
+
+    if_command  ->  IF condition THEN nl variable_decl_ou_constant_decl_ou_command_ast else_nl_01 ENDIF . nl   (rule 25)
+
+    NL  	shift, and go to state 1
+
+    nl  	go to state 174
+
+
+
+state 169
+
+    tSTEP_e_expression_01  ->  STEP . expression   (rule 30)
+
+    OPAR	shift, and go to state 55
+    MINUS	shift, and go to state 39
+    NUMBER_LITERAL	shift, and go to state 40
+    IDENTIFIER	shift, and go to state 41
+
+    using_array_variable	go to state 42
+    expression	go to state 175
+    arithmetic_expression	go to state 60
+    var_identifier	go to state 47
+    var_or_const_identifier	go to state 48
+
+
+
+state 170
+
+    for_command  ->  FOR using_simple_variable EQ expression TO expression tSTEP_e_expression_01 . nl variable_decl_ou_constant_decl_ou_command_ast NEXT nl   (rule 28)
+
+    NL  	shift, and go to state 1
+
+    nl  	go to state 176
+
+
+
+state 171
+
+    do_while_command  ->  DO WHILE condition nl variable_decl_ou_constant_decl_ou_command_ast LOOP nl .   (rule 31)
+
+    $default	reduce using rule 31 (do_while_command)
+
+
+
+state 172
+
+    loop_until_command  ->  DO nl variable_decl_ou_constant_decl_ou_command_ast LOOP UNTIL condition nl .   (rule 32)
+
+    $default	reduce using rule 32 (loop_until_command)
+
+
+
+state 173
+
+    else_nl_01  ->  ELSE nl variable_decl_ou_constant_decl_ou_command_ast .   (rule 26)
+
+    $default	reduce using rule 26 (else_nl_01)
+
+
+
+state 174
+
+    if_command  ->  IF condition THEN nl variable_decl_ou_constant_decl_ou_command_ast else_nl_01 ENDIF nl .   (rule 25)
+
+    $default	reduce using rule 25 (if_command)
+
+
+
+state 175
+
+    tSTEP_e_expression_01  ->  STEP expression .   (rule 30)
+
+    $default	reduce using rule 30 (tSTEP_e_expression_01)
+
+
+
+state 176
+
+    for_command  ->  FOR using_simple_variable EQ expression TO expression tSTEP_e_expression_01 nl . variable_decl_ou_constant_decl_ou_command_ast NEXT nl   (rule 28)
+
+    LET 	shift, and go to state 2
+    DIM 	shift, and go to state 3
+    CONST	shift, and go to state 4
+    IF  	shift, and go to state 5
+    FOR 	shift, and go to state 6
+    DO  	shift, and go to state 7
+    EXITLOOP	shift, and go to state 8
+    END 	shift, and go to state 9
+    PRINT	shift, and go to state 10
+    INPUT	shift, and go to state 11
+    IDENTIFIER	shift, and go to state 12
+
+    $default	reduce using rule 33 (variable_decl_ou_constant_decl_ou_command_ast)
+
+    variable_decl	go to state 96
+    constant_decl	go to state 97
+    command	go to state 98
+    if_command	go to state 18
+    for_command	go to state 19
+    do_while_command	go to state 20
+    loop_until_command	go to state 21
+    variable_decl_ou_constant_decl_ou_command_ast	go to state 177
+    assignment_command	go to state 22
+    end_command	go to state 23
+    exit_loop_command	go to state 24
+    input_command	go to state 25
+    using_variable	go to state 26
+    using_array_variable	go to state 27
+    using_simple_variable	go to state 28
+    print_command	go to state 29
+    var_identifier	go to state 30
+
+
+
+state 177
+
+    for_command  ->  FOR using_simple_variable EQ expression TO expression tSTEP_e_expression_01 nl variable_decl_ou_constant_decl_ou_command_ast . NEXT nl   (rule 28)
+
+    NEXT	shift, and go to state 178
+
+
+
+state 178
+
+    for_command  ->  FOR using_simple_variable EQ expression TO expression tSTEP_e_expression_01 nl variable_decl_ou_constant_decl_ou_command_ast NEXT . nl   (rule 28)
+
+    NL  	shift, and go to state 1
+
+    nl  	go to state 179
+
+
+
+state 179
+
+    for_command  ->  FOR using_simple_variable EQ expression TO expression tSTEP_e_expression_01 nl variable_decl_ou_constant_decl_ou_command_ast NEXT nl .   (rule 28)
+
+    $default	reduce using rule 28 (for_command)
+
+
+
+state 180
+
+    $   	go to state 181
+
+
+
+state 181
+
+    $   	go to state 182
+
+
+
+state 182
+
+    $default	accept
+
+

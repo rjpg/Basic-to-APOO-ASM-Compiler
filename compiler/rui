@@ -1,0 +1,5 @@
+ai:	mem	1
+loadn	3	R0
+store	R0	ai
+loadn	loadn	11	R0
+store	R0	ai
